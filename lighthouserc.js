@@ -5,12 +5,12 @@ const mobileSetting = require('./chrome-config/lr-mobile-config.js');
 module.exports = {
   ci: {
     collect: {
-      url: "https://qa-beta.theknot.com/content/lauren-conrad-celebrate-book",
+      url: [
+        "https://qa-beta.theknot.com/content/lauren-conrad-celebrate-book?mobile",
+        "https://qa-beta.theknot.com/content/lauren-conrad-celebrate-book?desktop"
+      ],
       numberOfRuns: 5,
-      settings: {
-        preset: "desktop",
-        ...desktopSetting,
-      }
+      settings: desktopSetting
     },
     upload: {
       target: "lhci",
